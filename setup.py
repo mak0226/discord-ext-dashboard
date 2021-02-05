@@ -14,16 +14,13 @@ with open('README.md') as f:
 	readme = f.read()
 	
 
-requirements = []
-with open("requirements.txt") as f:
-	requirements = f.read().splitlines()
+requirements = ["discord.py>=1.5.1]
 
-	
 setup(name='discord-ext-dashboard',
       author='Penguin Master',
       url='https://github.com/PenguinMaster0226/discord-ext-dashboard',
       version=version,
-      packages=['dashboard'],
+      packages=['discord.ext.dashboard'],
       license='MIT',
       description='A webhook and request based discord.py extension for making a bot dashboard.',
       long_description=readme,
