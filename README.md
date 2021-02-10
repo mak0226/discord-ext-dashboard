@@ -104,4 +104,5 @@ if __name__ == "__main__":
 
 
 Please note that cogs are not currently supported.
-For support join [**CRYO OFFICIAL**](https://discord.gg/Em2ZwkVbfE)
+You will also need to use Quart. Switching from another server isn't hard
+For support join [**CRYO OFFICIΛL**](https://discord.gg/Em2ZwkVbfE)
