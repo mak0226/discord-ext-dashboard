@@ -35,7 +35,7 @@ python3 -m pip install --upgrade discord-ext-dashboard
 ## Usage
 ### Prerequisites
 Before you get started, you will need a few things:
- - A webhook in secret channel (if anyone has access, they will be able to mess things up). This is optional depending on which class you will be using
+ - A webhook in secret channel (if anyone has access, they will be able to mess things up).
  - A properly hosted [**discord.py**](https://github.com/Rapptz/discord.py) bot
  
  And then you're ready to get started!
