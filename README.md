@@ -105,6 +105,6 @@ if __name__ == "__main__":
 
 Please note that cogs are not currently supported.
 <br>
-You will also need to use Quart as your webserver. Switching from another server isn't hard
+You will also need to use Quart as your webserver. Switching from another library isn't hard, so ask me and I'll gladly help you out.
 <br><br>
 For support join [**CRYO OFFICIΛL**](https://discord.gg/Em2ZwkVbfE)
