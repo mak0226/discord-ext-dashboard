@@ -25,7 +25,7 @@
 <p align=center>A webhook and request based discord.py extension for making a bot dashboard.</p>
 
 ## Installation
-```
+```py
 pip install -U discord-ext-dashboard
 
 # Or
