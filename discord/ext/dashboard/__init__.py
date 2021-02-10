@@ -1,4 +1,4 @@
 from .dashboard import Dashboard
 from .server import Server
 
-__version__ = "v0.0.2"
+__version__ = "v0.5.0"

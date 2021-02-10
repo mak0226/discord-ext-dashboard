@@ -6,7 +6,7 @@ import asyncio
 
 from .errors import *
 
-class Server:
+class WebhookServer:
 	def __init__(self, server, key, *args, **kwargs):
 		"""Initialize the server"""
 		if not kwargs.get("webhook_url"):
@@ -33,6 +33,40 @@ class Server:
 		data = self.data.pop(name, None) or self.data.pop(route, None)
 
 		return data
+
+	
+	async def process_request(self, request):
+		"""Processes the returned data from the bot"""
+		r = await request.json
+		
+		if request.headers.get("Authorization") != self.key:
+			raise InvalidAuthorization("invalid key provided")
+			
+		if r.get("name"):
+			self.data[r["name"]] = r["data"]
+			
+			
+class QuartServer:
+	def __init__(self, server, key, url, *args, **kwargs):
+		"""Initialize the server"""
+		if not kwargs.get("webhook_url"):
+			raise TypeError("__init__() missing one required positional argument: 'webhook_url'")
+		
+		self.server = server	
+		self.key = key
+		self.url = url
+		self.data = {}
+		
+		
+	async def request(self, route, *args, **kwargs):
+		"""Send a request to the bot"""
+		request_data = {"Authorization": self.key, "route": route, "data": kwargs}
+		
+		r = request.post(self.url, json=request_data)
+		
+		data = self.data.pop(name, None) or self.data.pop(route, None)
+
+		return r["data"]
 
 	
 	async def process_request(self, request):
