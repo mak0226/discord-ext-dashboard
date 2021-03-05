@@ -14,7 +14,7 @@ with open('README.md') as f:
 	readme = f.read()
 	
 
-requirements = ["discord.py>=1.5.1]
+requirements = ["discord.py>=1.5.1"]
 
 setup(name='discord-ext-dashboard',
       author='Penguin Master',
