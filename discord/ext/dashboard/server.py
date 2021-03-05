@@ -28,9 +28,9 @@ class WebhookServer:
 			webhook = Webhook.from_url(self.webhook_url, adapter=AsyncWebhookAdapter(session))
 			await webhook.send(request)
 			
-		await asyncio.sleep(.4)
+		await asyncio.sleep(.5)
 		
-		data = self.data.pop(name, None) or self.data.pop(route, None)
+		data = self.data.pop(route, None)
 
 		return data
 
@@ -64,6 +64,8 @@ class QuartServer:
 		
 		r = request.post(self.url, json=request_data)
 		
+		await asyncio.sleep(0.6)
+		
 		data = self.data.pop(name, None) or self.data.pop(route, None)
 
 		return r["data"]
@@ -71,7 +73,7 @@ class QuartServer:
 	
 	async def process_request(self, request):
 		"""Processes the returned data from the bot"""
-		r = await request.json
+		r = await request.json()
 		
 		if request.headers.get("Authorization") != self.key:
 			raise InvalidAuthorization("invalid key provided")
