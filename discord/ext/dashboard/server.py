@@ -15,6 +15,7 @@ class Server:
 		self.server = server	
 		self.key = key
 		self.webhook_url = kwargs.get("webhook_url")
+		self.sleep_time = kwargs.get("sleep_time") or 1
 		self.data = {}
 		
 		
@@ -28,7 +29,7 @@ class Server:
 			webhook = Webhook.from_url(self.webhook_url, adapter=AsyncWebhookAdapter(session))
 			await webhook.send(request)
 			
-		await asyncio.sleep(.5)
+		await asyncio.sleep(self.sleep_time)
 		
 		data = self.data.pop(route, None)
 
