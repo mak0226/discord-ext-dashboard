@@ -38,6 +38,6 @@ class Dashboard:
 		else:
 			result = await self.routes[r["route"]](r.get("data"))
 			
-			requests.post(self.url, headers={"Authorization": self.key}, json={"data": result})
+			requests.post(self.url, headers={"Authorization": self.key}, json={"name": r["route"], "data": result})
 			
 		return {"error": False, "message": "Request processed successfully"}
