@@ -41,3 +41,4 @@ class Dashboard:
 			requests.post(self.url, headers={"Authorization": self.key}, json={"name": r["route"], "data": result})
 			
 		return {"error": False, "message": "Request processed successfully"}
+

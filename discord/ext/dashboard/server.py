@@ -45,6 +45,3 @@ class Server:
 			
 		if r.get("name"):
 			self.data[r["name"]] = r["data"]
-			
-		else:
-			print(r)
