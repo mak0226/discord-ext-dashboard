@@ -82,7 +82,8 @@ app = Quart(__name__)
 app_dashboard = Server(
 	app,
 	"secret_key", 
-	webhook_url="https://your-private-discord-webhook.com"
+	webhook_url="https://your-private-discord-webhook.com",
+	sleep_time=1
 )
 
 @app.route("/")
